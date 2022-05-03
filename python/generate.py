@@ -4,7 +4,7 @@ Modify this file to generate your own problem instances.
 
 For usage, run `python3 generate.py --help`.
 """
-
+from random import *
 import argparse
 from pathlib import Path
 from typing import Callable, Dict
@@ -25,6 +25,20 @@ def make_small_instance() -> Instance:
     """
     cities = []
     # YOUR CODE HERE
+    d = 29
+    n = randint(15, 25)
+    #rs = 3
+    #rp = 8
+    while(len(cities) < n):
+        x = randint(0, d)
+        y = randint(0, d)
+        skip = False
+        for coord in cities:
+            if(coord.x == x and coord.y == y):
+                skip = True
+        if(not skip):
+            cities.append(Point(x,y))
+
     return Size.SMALL.instance(cities)
 
 
@@ -38,6 +52,19 @@ def make_medium_instance() -> Instance:
     """
     cities = []
     # YOUR CODE HERE
+    d = 49
+    n = randint(45, 55)
+    #rs = 3
+    #rp = 8
+    while(len(cities) < n):
+        x = randint(0, d)
+        y = randint(0, d)
+        skip = False
+        for coord in cities:
+            if(coord.x == x and coord.y == y):
+                skip = True
+        if(not skip):
+            cities.append(Point(x,y))
     return Size.MEDIUM.instance(cities)
 
 
@@ -51,6 +78,19 @@ def make_large_instance() -> Instance:
     """
     cities = []
     # YOUR CODE HERE
+    d = 99
+    n = randint(195, 205)
+    #rs = 3
+    #rp = 8
+    while(len(cities) < n):
+        x = randint(0, d)
+        y = randint(0, d)
+        skip = False
+        for coord in cities:
+            if(coord.x == x and coord.y == y):
+                skip = True
+        if(not skip):
+            cities.append(Point(x,y))
     return Size.LARGE.instance(cities)
 
 

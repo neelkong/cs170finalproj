@@ -8,3 +8,5 @@ python3 python/solve_all.py inputs outputs
 ```
 
 This should produce a folder of outputs with the solution to the problem.
+
+We modified the solve_naive method body with our algorithm.
